@@ -1,0 +1,56 @@
+﻿@model ManagerPro.Models.AccountList
+
+
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AccountList</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.AccountName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WibeSite)
+        </dd>*@
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.AccountNum)*@
+            账号:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountNum)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.AccountPassW)*@
+            密码:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountPassW)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Note)*@
+            备注:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -34,7 +34,8 @@
         <td>
             @Html.ActionLink("编辑", "Edit", new { id=item.ID }) |
             @Html.ActionLink("详细信息", "Details", new { id=item.ID }) |
-            @Html.ActionLink("删除", "Delete", new { id=item.ID })
+            @Html.ActionLink("删除账号信息", "Delete", new { id=item.ID }) |
+            @Html.ActionLink("删除网站列表","DeleteWebsite",new { id = item.ID })
         </td>
     </tr>
 }

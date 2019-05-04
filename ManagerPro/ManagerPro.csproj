@@ -147,6 +147,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\AccountManager\Details.cshtml" />
     <Content Include="Views\AccountManager\Delete.cshtml" />
+    <Content Include="Views\AccountManager\DeleteWebsite.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

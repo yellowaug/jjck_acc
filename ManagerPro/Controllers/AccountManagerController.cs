@@ -79,7 +79,11 @@ namespace ManagerPro.Controllers
             AccountList accounts = Accountdb.accountlist.Find(id);
             return View(accounts);
         }
-
+        public ActionResult DeleteWebsite(int id)
+        {
+            WebList webs = Accountdb.weblist.Find(id);
+            return View(webs);
+        }
         // POST: AccountManager/Delete/5
         [HttpPost,ActionName("Delete")]
         public ActionResult Delete(int id, FormCollection collection)
@@ -96,6 +100,22 @@ namespace ManagerPro.Controllers
             {
                 return View();
             }
+        }
+        [HttpPost,ActionName("DeleteWebsite")]
+        public ActionResult DeleteWebsite(int id,FormCollection collection)
+        {
+            try
+            {
+                WebList webs = Accountdb.weblist.Find(id);
+                Accountdb.weblist.Remove(webs);
+                Accountdb.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+
         }
     }
 }

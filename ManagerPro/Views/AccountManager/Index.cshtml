@@ -6,7 +6,14 @@
 
 <h2>Index</h2>
 
-<p>
+<table class="table">
+    <tr>
+        <th> @Html.ActionLink("录入网站", "Create")</th>
+        <th> @Html.ActionLink("录入账号", "Index", "AccountCreate")</th>
+
+    </tr>
+</table>
+@*<p>
     @Html.ActionLink("录入网站", "Create")
 </p>
 <p>
@@ -14,7 +21,7 @@
 </p>
 <p>
     @Html.ActionLink("录入网站URL","CreateUrl","AccountCreate")
-</p>
+</p>*@
 <table class="table">
     <tr>
         <th>

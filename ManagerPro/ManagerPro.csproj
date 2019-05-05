@@ -123,8 +123,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905050130354_InitialCreate.cs" />
+    <Compile Include="Migrations\201905050130354_InitialCreate.Designer.cs">
+      <DependentUpon>201905050130354_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905050205480_Addweburl.cs" />
+    <Compile Include="Migrations\201905050205480_Addweburl.Designer.cs">
+      <DependentUpon>201905050205480_Addweburl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountList.cs" />
+    <Compile Include="Models\Urllist.cs" />
     <Compile Include="Models\WebList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -148,6 +158,8 @@
     <Content Include="Views\AccountManager\Details.cshtml" />
     <Content Include="Views\AccountManager\Delete.cshtml" />
     <Content Include="Views\AccountManager\DeleteWebsite.cshtml" />
+    <Content Include="Views\AccountCreate\CreateUrl.cshtml" />
+    <Content Include="Views\AccountManager\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,6 +169,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905050130354_InitialCreate.resx">
+      <DependentUpon>201905050130354_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905050205480_Addweburl.resx">
+      <DependentUpon>201905050205480_Addweburl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

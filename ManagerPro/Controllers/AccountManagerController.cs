@@ -54,22 +54,24 @@ namespace ManagerPro.Controllers
         // GET: AccountManager/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            WebList webList = Accountdb.weblist.Find(id);
+            return this.View(webList);
         }
 
         // POST: AccountManager/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(WebList webLists)
         {
             try
             {
                 // TODO: Add update logic here
-
+                Accountdb.Entry(webLists).State = System.Data.Entity.EntityState.Modified;
+                Accountdb.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(webLists);
             }
         }
 

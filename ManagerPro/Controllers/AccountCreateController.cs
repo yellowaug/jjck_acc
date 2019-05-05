@@ -30,6 +30,24 @@ namespace ManagerPro.Controllers
             ViewData["AccountName"] = new SelectList(Accountdb.weblist, "ID", "Website",accounts.AccountName);
             return View(accounts);
         }
+        public ActionResult CreateUrl()
+        {
+            ViewData["WebSiteID"] = new SelectList(Accountdb.weblist, "ID", "Website");
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateUrl(Urllist urllists)
+        {
+            if (ModelState.IsValid)
+            {
+                Accountdb.urllists.Add(urllists);
+                Accountdb.SaveChanges();
+                return RedirectToAction("CreateUrl");
+
+            }
+            ViewData["WebSiteID"] = new SelectList(Accountdb.weblist, "ID", "Website",urllists.WebSiteUrl);
+            return View(urllists);
+        }
 
     }
 }

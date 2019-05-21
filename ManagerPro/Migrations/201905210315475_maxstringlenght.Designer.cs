@@ -7,13 +7,13 @@ namespace ManagerPro.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Addweburl : IMigrationMetadata
+    public sealed partial class maxstringlenght : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Addweburl));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(maxstringlenght));
         
         string IMigrationMetadata.Id
         {
-            get { return "201905050205480_Addweburl"; }
+            get { return "201905210315475_maxstringlenght"; }
         }
         
         string IMigrationMetadata.Source

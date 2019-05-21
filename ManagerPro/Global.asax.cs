@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using ManagerPro.DAL;
+using System.Data.Entity.Infrastructure.Interception;
 
 namespace ManagerPro
 {
@@ -13,6 +15,8 @@ namespace ManagerPro
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            DbInterception.Add(new SchoolInterceptorLogging());
+            DbInterception.Add(new SchoolInterceptorTransientErrors());
         }
     }
 }

@@ -78,6 +78,8 @@ F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.csproj.CopyComplete
 F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.dll
 F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.pdb
 F:\sharpdemo\ManagerPro\ManagerPro\bin\zh-Hans\EntityFramework.resources.dll
-F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.Migrations.InitialCreate.resources
+F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.Migrations.addcreatetime.resources
 F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.csproj.GenerateResource.cache
-F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.Migrations.Addweburl.resources
+F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.Migrations.maxstringlenght.resources
+F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.Migrations.addrequired.resources
+F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.Migrations.sotrwebsite.resources

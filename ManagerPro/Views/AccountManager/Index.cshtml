@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@*<h2>Index</h2>*@
 
 <table class="table">
     <tr>
@@ -22,10 +22,18 @@
 <p>
     @Html.ActionLink("录入网站URL","CreateUrl","AccountCreate")
 </p>*@
+@using (Html.BeginForm())
+{
+    <p>
+        搜索内容：@Html.TextBox("serachString")
+        <input type="submit" value="搜索" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Website)
+            @*@Html.DisplayNameFor(model => model.Website)*@
+            @Html.ActionLink("网站", "Index", new { sortOrder = ViewBag.WebsiteSort })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Note)
@@ -37,6 +45,7 @@
     <tr>
         <td>
             <a href="@Html.DisplayFor(modelItem=>item.WebsiteUrl)" target="_blank">@Html.DisplayFor(modelItem => item.Website)</a>
+            
             @*@Html.DisplayFor(modelItem => item.Website) | @Html.DisplayFor(modelItem=>item.WebsiteUrl)*@
         </td>
         <td>

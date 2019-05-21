@@ -120,16 +120,28 @@
     <Compile Include="Controllers\AccountCreateController.cs" />
     <Compile Include="Controllers\AccountManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\SchoolInterceptorLogging.cs" />
+    <Compile Include="DAL\SchoolInterceptorTransientErrors.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905050130354_InitialCreate.cs" />
-    <Compile Include="Migrations\201905050130354_InitialCreate.Designer.cs">
-      <DependentUpon>201905050130354_InitialCreate.cs</DependentUpon>
+    <Compile Include="Logs\ILogger.cs" />
+    <Compile Include="Logs\Logger.cs" />
+    <Compile Include="Migrations\201905210302434_addcreatetime.cs" />
+    <Compile Include="Migrations\201905210302434_addcreatetime.Designer.cs">
+      <DependentUpon>201905210302434_addcreatetime.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905050205480_Addweburl.cs" />
-    <Compile Include="Migrations\201905050205480_Addweburl.Designer.cs">
-      <DependentUpon>201905050205480_Addweburl.cs</DependentUpon>
+    <Compile Include="Migrations\201905210315475_maxstringlenght.cs" />
+    <Compile Include="Migrations\201905210315475_maxstringlenght.Designer.cs">
+      <DependentUpon>201905210315475_maxstringlenght.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905210320179_addrequired.cs" />
+    <Compile Include="Migrations\201905210320179_addrequired.Designer.cs">
+      <DependentUpon>201905210320179_addrequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905210847500_sotrwebsite.cs" />
+    <Compile Include="Migrations\201905210847500_sotrwebsite.Designer.cs">
+      <DependentUpon>201905210847500_sotrwebsite.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -171,11 +183,17 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905050130354_InitialCreate.resx">
-      <DependentUpon>201905050130354_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905210302434_addcreatetime.resx">
+      <DependentUpon>201905210302434_addcreatetime.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905050205480_Addweburl.resx">
-      <DependentUpon>201905050205480_Addweburl.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905210315475_maxstringlenght.resx">
+      <DependentUpon>201905210315475_maxstringlenght.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905210320179_addrequired.resx">
+      <DependentUpon>201905210320179_addrequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905210847500_sotrwebsite.resx">
+      <DependentUpon>201905210847500_sotrwebsite.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

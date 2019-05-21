@@ -12,13 +12,29 @@ namespace ManagerPro.Controllers
     {
         private Account Accountdb = new Account();
         // GET: AccountManager
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder,string serachString)
         {
-            //var Acclist = from e in Accountdb.weblist
-            //              orderby e.ID
-            //              select e;
-            var Acclist = Accountdb.weblist.ToList();
-            return View(Acclist);
+            //添加排序和搜索功能
+            ViewBag.WebsiteSort = String.IsNullOrEmpty(sortOrder) ? "site_desc" : ""; //这个是排序功能
+
+            var Acclist = from e in Accountdb.weblist                          
+                          select e;
+            if (!String.IsNullOrEmpty(serachString)) //这个是搜索功能
+            {
+                Acclist = Acclist.Where(e => e.Website.Contains(serachString)|| e.Note.Contains(serachString));
+            }
+            switch (sortOrder)
+            {
+                case "site_desc":
+                    Acclist = Acclist.OrderByDescending(e => e.Website);
+                    break;
+                default:
+                    Acclist = Acclist.OrderBy(e => e.Website);
+                    break;
+            }
+
+            //var Acclist = Accountdb.weblist.ToList();
+            return View(Acclist.ToList());
         }
 
         // GET: AccountManager/Details/5

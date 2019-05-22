@@ -83,3 +83,7 @@ F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.csproj.GenerateResource.
 F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.Migrations.maxstringlenght.resources
 F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.Migrations.addrequired.resources
 F:\sharpdemo\ManagerPro\ManagerPro\obj\Debug\ManagerPro.Migrations.sotrwebsite.resources
+F:\sharpdemo\ManagerPro\ManagerPro\bin\PagedList.dll
+F:\sharpdemo\ManagerPro\ManagerPro\bin\PagedList.Mvc.dll
+F:\sharpdemo\ManagerPro\ManagerPro\bin\PagedList.xml
+F:\sharpdemo\ManagerPro\ManagerPro\bin\PagedList.Mvc.xml

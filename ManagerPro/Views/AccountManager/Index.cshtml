@@ -1,7 +1,9 @@
-﻿@model IEnumerable<ManagerPro.Models.WebList>
+﻿@*@model IEnumerable<ManagerPro.Models.WebList>*@
+@model PagedList.IPagedList<ManagerPro.Models.WebList>
+@using PagedList.Mvc
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "账号列表";
 }
 
 @*<h2>Index</h2>*@
@@ -14,18 +16,18 @@
     </tr>
 </table>
 @*<p>
-    @Html.ActionLink("录入网站", "Create")
-</p>
-<p>
-    @Html.ActionLink("录入账号","Index","AccountCreate")
-</p>
-<p>
-    @Html.ActionLink("录入网站URL","CreateUrl","AccountCreate")
-</p>*@
+        @Html.ActionLink("录入网站", "Create")
+    </p>
+    <p>
+        @Html.ActionLink("录入账号","Index","AccountCreate")
+    </p>
+    <p>
+        @Html.ActionLink("录入网站URL","CreateUrl","AccountCreate")
+    </p>*@
 @using (Html.BeginForm())
 {
     <p>
-        搜索内容：@Html.TextBox("serachString")
+        @Html.TextBox("serachString")
         <input type="submit" value="搜索" />
     </p>
 }
@@ -36,28 +38,34 @@
             @Html.ActionLink("网站", "Index", new { sortOrder = ViewBag.WebsiteSort })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Note)
+            @*@Html.DisplayNameFor(model => model.Note)*@
+            备注
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            <a href="@Html.DisplayFor(modelItem=>item.WebsiteUrl)" target="_blank">@Html.DisplayFor(modelItem => item.Website)</a>
-            
-            @*@Html.DisplayFor(modelItem => item.Website) | @Html.DisplayFor(modelItem=>item.WebsiteUrl)*@
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Note)
-        </td>
-        <td>
-            @Html.ActionLink("编辑", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("详细信息", "Details", new { id=item.ID }) |
-            @Html.ActionLink("删除账号信息", "Delete", new { id=item.ID }) |
-            @Html.ActionLink("删除网站列表","DeleteWebsite",new { id = item.ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Html.DisplayFor(modelItem=>item.WebsiteUrl)" target="_blank">@Html.DisplayFor(modelItem => item.Website)</a>
+
+                @*@Html.DisplayFor(modelItem => item.Website) | @Html.DisplayFor(modelItem=>item.WebsiteUrl)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.ActionLink("编辑", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("详细信息", "Details", new { id = item.ID }) |
+                @Html.ActionLink("删除账号信息", "Delete", new { id = item.ID }) |
+                @Html.ActionLink("删除网站列表", "DeleteWebsite", new { id = item.ID })
+            </td>
+        </tr>
+    }
 
 </table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index",
+     new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }))

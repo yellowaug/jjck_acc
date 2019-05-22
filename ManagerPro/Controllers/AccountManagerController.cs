@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ManagerPro.Models;
+using PagedList;
 
 namespace ManagerPro.Controllers
 {
@@ -12,11 +13,20 @@ namespace ManagerPro.Controllers
     {
         private Account Accountdb = new Account();
         // GET: AccountManager
-        public ActionResult Index(string sortOrder,string serachString)
+        public ActionResult Index(string sortOrder,string serachString,string currentFilter,int?page)
         {
             //添加排序和搜索功能
+            ViewBag.CurrentSort = sortOrder;
             ViewBag.WebsiteSort = String.IsNullOrEmpty(sortOrder) ? "site_desc" : ""; //这个是排序功能
-
+            if (serachString != null) //这个是分页的功能
+            {
+                page = 1;
+            }
+            else
+            {
+                serachString = currentFilter;
+            }
+            ViewBag.CurrentFilter = serachString;
             var Acclist = from e in Accountdb.weblist                          
                           select e;
             if (!String.IsNullOrEmpty(serachString)) //这个是搜索功能
@@ -32,9 +42,10 @@ namespace ManagerPro.Controllers
                     Acclist = Acclist.OrderBy(e => e.Website);
                     break;
             }
-
+            int pageSize = 20; //这个是分页的功能
+            int pageNumber = (page ?? 1);
             //var Acclist = Accountdb.weblist.ToList();
-            return View(Acclist.ToList());
+            return View(Acclist.ToPagedList(pageNumber,pageSize));
         }
 
         // GET: AccountManager/Details/5

@@ -1,0 +1,40 @@
+﻿@model ManagerPro.Models.WebList
+
+@{
+    ViewBag.Title = "删除网站列表";
+}
+
+<h2>删除网站列表</h2>
+
+<h3>你确定要删除此也么?</h3>
+<div>
+    @*<h4>WebList</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Website)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="删除" class="btn btn-default" /> |
+            @Html.ActionLink("返回首页", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,56 @@
+﻿@model ManagerPro.Models.AccountList
+
+@{
+    ViewBag.Title = "删除账号列表";
+}
+
+<h2>删除账号列表</h2>
+
+<h3>你确定要删除此也么？</h3>
+<div>
+    @*<h4>AccountList</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountPassW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountPassW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="删除" class="btn btn-default" /> |
+            @Html.ActionLink("返回首页", "Index")
+        </div>
+    }
+</div>

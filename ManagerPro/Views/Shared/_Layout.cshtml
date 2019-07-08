@@ -18,8 +18,10 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("静佳后台管理", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("账号管理", "Index", "AccountManager", new { area=""},new { @class= "navbar-brand"})
-
+                @Html.ActionLink("账号信息管理", "Index", "AccountManager", new { area=""},new { @class= "navbar-brand"})
+                @Html.ActionLink("虚拟机信息管理","Index","VhostAccount",new { area=""},new { @class="navbar-brand"})
+                @Html.ActionLink("登出","Logout","VhostAccount",new { area=""},new { @class="navbar-brand"})
+                
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">

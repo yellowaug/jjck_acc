@@ -28,6 +28,16 @@ namespace ManagerPro
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "AccountCreate", action = "Index", id = UrlParameter.Optional }
                 );
+            routes.MapRoute(
+                name: "VhostAccount",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "VhostAccount", action = "Index", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+               name: "Login",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "Authentication", action = "Login", id = UrlParameter.Optional }
+           );
         }
     }
 }

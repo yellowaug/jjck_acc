@@ -111,6 +111,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -124,9 +125,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BusinessLayer\IsValidUser.cs" />
     <Compile Include="Controllers\AccountCreateController.cs" />
     <Compile Include="Controllers\AccountManagerController.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VhostAccountController.cs" />
     <Compile Include="DAL\SchoolInterceptorLogging.cs" />
     <Compile Include="DAL\SchoolInterceptorTransientErrors.cs" />
     <Compile Include="Global.asax.cs">
@@ -134,28 +138,27 @@
     </Compile>
     <Compile Include="Logs\ILogger.cs" />
     <Compile Include="Logs\Logger.cs" />
-    <Compile Include="Migrations\201905210302434_addcreatetime.cs" />
-    <Compile Include="Migrations\201905210302434_addcreatetime.Designer.cs">
-      <DependentUpon>201905210302434_addcreatetime.cs</DependentUpon>
+    <Compile Include="Migrations\201905220650548_InitialCreate.cs" />
+    <Compile Include="Migrations\201905220650548_InitialCreate.Designer.cs">
+      <DependentUpon>201905220650548_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905210315475_maxstringlenght.cs" />
-    <Compile Include="Migrations\201905210315475_maxstringlenght.Designer.cs">
-      <DependentUpon>201905210315475_maxstringlenght.cs</DependentUpon>
+    <Compile Include="Migrations\201906090644019_addvhostaccount.cs" />
+    <Compile Include="Migrations\201906090644019_addvhostaccount.Designer.cs">
+      <DependentUpon>201906090644019_addvhostaccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905210320179_addrequired.cs" />
-    <Compile Include="Migrations\201905210320179_addrequired.Designer.cs">
-      <DependentUpon>201905210320179_addrequired.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905210847500_sotrwebsite.cs" />
-    <Compile Include="Migrations\201905210847500_sotrwebsite.Designer.cs">
-      <DependentUpon>201905210847500_sotrwebsite.cs</DependentUpon>
+    <Compile Include="Migrations\201906090702484_addvhostaccountdate.cs" />
+    <Compile Include="Migrations\201906090702484_addvhostaccountdate.Designer.cs">
+      <DependentUpon>201906090702484_addvhostaccountdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountList.cs" />
+    <Compile Include="Models\HostAccount.cs" />
     <Compile Include="Models\Urllist.cs" />
     <Compile Include="Models\WebList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\ShowUser.cs" />
+    <Compile Include="ViewModel\UserDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -179,6 +182,12 @@
     <Content Include="Views\AccountManager\DeleteWebsite.cshtml" />
     <Content Include="Views\AccountCreate\CreateUrl.cshtml" />
     <Content Include="Views\AccountManager\Edit.cshtml" />
+    <Content Include="Views\VhostAccount\Index.cshtml" />
+    <Content Include="Views\VhostAccount\Details.cshtml" />
+    <Content Include="Views\VhostAccount\Create.cshtml" />
+    <Content Include="Views\VhostAccount\Edit.cshtml" />
+    <Content Include="Views\VhostAccount\Delete.cshtml" />
+    <Content Include="Views\Authentication\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -190,17 +199,14 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905210302434_addcreatetime.resx">
-      <DependentUpon>201905210302434_addcreatetime.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905220650548_InitialCreate.resx">
+      <DependentUpon>201905220650548_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905210315475_maxstringlenght.resx">
-      <DependentUpon>201905210315475_maxstringlenght.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906090644019_addvhostaccount.resx">
+      <DependentUpon>201906090644019_addvhostaccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905210320179_addrequired.resx">
-      <DependentUpon>201905210320179_addrequired.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905210847500_sotrwebsite.resx">
-      <DependentUpon>201905210847500_sotrwebsite.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906090702484_addvhostaccountdate.resx">
+      <DependentUpon>201906090702484_addvhostaccountdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

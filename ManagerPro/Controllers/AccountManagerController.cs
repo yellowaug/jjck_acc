@@ -12,6 +12,7 @@ namespace ManagerPro.Controllers
 
     {
         private Account Accountdb = new Account();
+        [Authorize]
         // GET: AccountManager
         public ActionResult Index(string sortOrder,string serachString,string currentFilter,int?page)
         {

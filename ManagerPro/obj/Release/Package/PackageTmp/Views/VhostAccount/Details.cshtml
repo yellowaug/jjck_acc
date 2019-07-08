@@ -1,0 +1,66 @@
+﻿@model ManagerPro.Models.HostAccount
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HostAccount</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HostName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HostName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HostAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HostAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HostAccountNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HostAccountNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HostAccountPas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HostAccountPas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InputDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InputDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HostNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HostNote)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HostID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -24,6 +24,7 @@
         public DbSet<WebList> weblist { get; set; }
         public DbSet<AccountList> accountlist { get; set; }
         public DbSet<Urllist> urllists { get; set; }
+        public DbSet<HostAccount> hostAccounts { get; set; }
     }
 
     //public class MyEntity

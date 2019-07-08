@@ -1,0 +1,81 @@
+﻿@*@model IEnumerable<ManagerPro.Models.HostAccount>*@
+@model PagedList.IPagedList<ManagerPro.Models.HostAccount>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "虚拟机账号";
+}
+
+<p>
+    @Html.ActionLink("录入虚拟机信息", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.TextBox("SearchString")
+        <input type="submit" value="搜索" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("主机名称", "Index", new { sortOrder = ViewBag.WebsiteSort })
+            @*@Html.DisplayNameFor(model => model.HostName)*@
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.HostAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HostAccountNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HostAccountPas)
+            </th>*@
+        <th>
+            录入时间
+            @*@Html.DisplayNameFor(model => model.InputDate)*@
+        </th>
+        <th>
+            备注
+            @*@Html.DisplayNameFor(model => model.HostNote)*@
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HostName)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.HostAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HostAccountNum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HostAccountPas)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.InputDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HostNote)
+            </td>
+            <td>
+                @Html.ActionLink("编辑", "Edit", new { id = item.HostID }) |
+                @Html.ActionLink("详情", "Details", new { id = item.HostID }) |
+                @Html.ActionLink("删除", "Delete", new { id = item.HostID })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
